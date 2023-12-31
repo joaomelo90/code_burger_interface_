@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import { createRoot } from 'react-dom' // Importando createRoot
+import { ToastContainer } from 'react-toastify'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import Login from './containers/Login'
+import Register from './containers/Register'
+import { UserProvider } from './hooks/UserContext'
+import GlobalStyles from './styles/globalStyles'
+// Utilizando createRoot em vez de ReactDOM.render
+createRoot(document.getElementById('root')).render(
+  <>
+    <UserProvider>
+      <Login />
+    </UserProvider>
+    <ToastContainer autoClose={2000} />
+    <GlobalStyles />
+  </>
+)
