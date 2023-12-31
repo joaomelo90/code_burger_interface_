@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Hamburgueria DevClub
+Este é um projeto de interface para uma hamburgueria desenvolvido como parte do curso do DevClub. Utiliza React para construir a interface do usuário, bem como várias bibliotecas e recursos úteis para validação, feedback ao usuário e gerenciamento de formulários.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tecnologias Utilizadas
+React: Biblioteca JavaScript para construção de interfaces de usuário.
+Yup: Biblioteca de validação para garantir a integridade dos dados nos formulários.
+Toast: Biblioteca para exibir notificações e mensagens ao usuário.
+useForm Hook: Um hook personalizado para o gerenciamento de formulários no React.
+Outros Hooks do React: Utilizamos vários hooks internos do React para gerenciar o estado e o ciclo de vida dos componentes.
 
-## Available Scripts
+## Funcionalidades
+ Exibição do cardápio da hamburgueria.
+ Funcionalidade de seleção de itens do cardápio para pedidos.
+ Validação de formulários para garantir que os dados inseridos sejam corretos.
+ 
+ 
+ ## Instalação
+ Certifique-se de ter o Node.js instalado. Para configurar e executar este projeto localmente, siga estas etapas:
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone este repositório: git clone https://github.com/joaomelo90/code_burger_interface
+Instale as dependências:  yarn install
+Inicie o servidor de desenvolvimento: yarn start
+Acesse http://localhost:3000 no seu navegador.
