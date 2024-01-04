@@ -1,6 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Login } from 'react-router-dom'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
@@ -110,7 +112,10 @@ function Register() {
           </Button>
         </form>
         <SingInLink>
-          Já possui conta ? <a>Sing In</a>
+          Já possui conta ?{' '}
+          <Link style={{ color: 'white' }} to={'/login'}>
+            Sing In
+          </Link>
         </SingInLink>
       </ContainerItens>
     </Container>
