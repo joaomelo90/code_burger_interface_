@@ -10,9 +10,9 @@ function CategoryCarousel() {
 
   useEffect(() => {
     async function loadCategories() {
-      const response = await api.get('categories')
-      console.log(response.data)
-      setCategories()
+      const { data } = await api.get('categories')
+
+      setCategories(data)
     }
 
     loadCategories()
@@ -21,6 +21,16 @@ function CategoryCarousel() {
   return (
     <Container>
       <CategoryImg src={Category} alt="text category" />
+
+      <Carousel itemsToShow={4}>
+        {categories &&
+          categories.map(category => (
+            <div key={category.id}>
+              <img src={category.url} alt="foto da categoria" />
+              <buton>{category.name}</buton>
+            </div>
+          ))}
+      </Carousel>
     </Container>
   )
 }
