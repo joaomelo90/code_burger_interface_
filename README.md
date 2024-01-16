@@ -2,11 +2,11 @@
 Este é um projeto de interface para uma hamburgueria desenvolvido como parte do curso do DevClub. Utiliza React para construir a interface do usuário, bem como várias bibliotecas e recursos úteis para validação, feedback ao usuário e gerenciamento de formulários.
 
 ## Tecnologias Utilizadas
-React: Biblioteca JavaScript para construção de interfaces de usuário.
-Yup: Biblioteca de validação para garantir a integridade dos dados nos formulários.
-Toast: Biblioteca para exibir notificações e mensagens ao usuário.
-useForm Hook: Um hook personalizado para o gerenciamento de formulários no React.
-Outros Hooks do React: Utilizamos vários hooks internos do React para gerenciar o estado e o ciclo de vida dos componentes.
+React: Biblioteca JavaScript para construção de interfaces de usuário.<br>
+Yup: Biblioteca de validação para garantir a integridade dos dados nos formulários.<br>
+Toast: Biblioteca para exibir notificações e mensagens ao usuário.<br>
+useForm Hook: Um hook personalizado para o gerenciamento de formulários no React.<br>
+Outros Hooks do React: Utilizamos vários hooks internos do React para gerenciar o estado e o ciclo de vida dos componentes.<br>
 
 ## Funcionalidades
  Exibição do cardápio da hamburgueria.
