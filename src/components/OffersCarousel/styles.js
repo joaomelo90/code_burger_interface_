@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: #efefef;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,14 +31,23 @@ export const CategoryImg = styled.img``
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
+
+  p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 120%;
+    color: #424242;
+  }
 `
 
 export const Image = styled.img`
   width: 200px;
   border-radius: 10px;
+  margin-bottom: 16px;
 `
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   //config do botao nome categoria
   margin-top: 16px;
   background: #9758a6;
@@ -64,9 +72,4 @@ export const Button = styled(Link)`
   &:active {
     opacity: 0.6;
   }
-
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `

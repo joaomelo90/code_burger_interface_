@@ -1,14 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Login } from 'react-router-dom'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import RegisterImg from '../../assets/cadastro.jpeg'
 import Logo from '../../assets/logo-login.svg'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 import api from '../../services/api'
 import {
   Container,
@@ -20,7 +19,7 @@ import {
   ErrorMessage
 } from './styles'
 
-function Register() {
+export function Register() {
   const schema = Yup.object().shape({
     name: Yup.string().required('Nome Obrigatorio'),
     email: Yup.string()
@@ -121,5 +120,3 @@ function Register() {
     </Container>
   )
 }
-
-export default Register

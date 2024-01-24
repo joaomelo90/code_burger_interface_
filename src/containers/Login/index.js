@@ -1,13 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import LoginImg from '../../assets/humburger-login.svg'
 import Logo from '../../assets/logo-login.svg'
-import Button from '../../components/Button'
+import { Button } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
@@ -20,7 +20,9 @@ import {
   ErrorMessage
 } from './styles'
 
-function Login() {
+export function Login() {
+  const history = useHistory()
+
   const { putUserData } = useUser()
 
   const schema = Yup.object().shape({
@@ -54,6 +56,14 @@ function Login() {
     )
 
     putUserData(data)
+
+    setTimeout(() => {
+      if (data.admin) {
+        history.push('/pedidos')
+      } else {
+        history.push('/')
+      }
+    }, 1000)
   }
 
   return (
@@ -94,5 +104,3 @@ function Login() {
     </Container>
   )
 }
-
-export default Login
