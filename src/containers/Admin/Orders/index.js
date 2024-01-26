@@ -45,18 +45,6 @@ function Orders() {
     setRows(newRows)
   }, [filteredOrders])
 
-  useEffect(() => {
-    if (activeStatus === 1) {
-      setFilteredOrders(orders)
-    } else {
-      const statusIndex = status.findIndex(sts => sts.id === activeStatus)
-      const newFilteredOrders = orders.filter(
-        order => order.status === status[statusIndex].value
-      )
-      setFilteredOrders(newFilteredOrders)
-    }
-  }, [orders])
-
   function handleStatus(status) {
     if (status.id === 1) {
       setFilteredOrders(orders)
@@ -66,6 +54,27 @@ function Orders() {
     }
     setActiveStatus(status.id)
   }
+
+  useEffect(() => {
+    if (activeStatus === 1) {
+      setFilteredOrders(orders)
+    } else {
+      const statusIndex = status.findIndex(sts => sts.id === activeStatus)
+
+      if (
+        statusIndex !== -1 &&
+        status[statusIndex] &&
+        status[statusIndex].value !== undefined
+      ) {
+        const newFilteredOrders = orders.filter(
+          order => order.status === status[statusIndex].value
+        )
+        setFilteredOrders(newFilteredOrders)
+      } else {
+        console.error('erro')
+      }
+    }
+  }, [orders])
 
   return (
     <Container>
