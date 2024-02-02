@@ -8,13 +8,16 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
+import paths from '../../../constants/paths'
 import api from '../../../services/api'
 import formatCurrency from '../../../utils/formatCurrency'
 import { Container, Img, EditIconStyles } from './styles'
 
 export function ListProducts() {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState()
+  const { push } = useHistory()
 
   useEffect(() => {
     async function loadOrders() {
@@ -32,6 +35,9 @@ export function ListProducts() {
     }
     return <CancelIcon style={{ color: '#cc1717' }} />
   }
+  function EditProduct(product) {
+    push(paths.EditProducts, { product })
+  }
 
   return (
     <Container>
@@ -47,24 +53,25 @@ export function ListProducts() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {products.map(product => (
-              <TableRow
-                key={product.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {product.name}
-                </TableCell>
-                <TableCell>{formatCurrency(product.price)}</TableCell>
-                <TableCell align="center">{isOffer(product.offer)}</TableCell>
-                <TableCell align="center">
-                  <Img src={product.url} alt="imagem-produto" />
-                </TableCell>
-                <TableCell>
-                  <EditIconStyles />
-                </TableCell>
-              </TableRow>
-            ))}
+            {products &&
+              products.map(product => (
+                <TableRow
+                  key={product.id}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {product.name}
+                  </TableCell>
+                  <TableCell>{formatCurrency(product.price)}</TableCell>
+                  <TableCell align="center">{isOffer(product.offer)}</TableCell>
+                  <TableCell align="center">
+                    <Img src={product.url} alt="imagem-produto" />
+                  </TableCell>
+                  <TableCell>
+                    <EditIconStyles onClick={() => EditProduct(product)} />
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>

@@ -70,8 +70,6 @@ function Orders() {
           order => order.status === status[statusIndex].value
         )
         setFilteredOrders(newFilteredOrders)
-      } else {
-        console.error('erro')
       }
     }
   }, [orders])
